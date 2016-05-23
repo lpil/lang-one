@@ -17,7 +17,7 @@ defmodule OneLexerTest do
   test "strings" do
     ~S("Hi") ~> [{:string, _, "Hi"}]
     ~S("")   ~> [{:string, _, ""}]
-    ~S("\\") ~> [{:string, _, ~S(\\)}]
-    ~S("\"") ~> [{:string, _, ~S(\")}]
+    ~S("\\") ~> [{:string, _, "\\"}]
+    ~S("\"") ~> [{:string, _, ~S(")}]
   end
 end
