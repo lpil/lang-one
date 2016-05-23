@@ -1,0 +1,7 @@
+/_build
+/cover
+/deps
+erl_crash.dump
+*.ez
+src/one_lexer.erl
+src/one_parser.erl
