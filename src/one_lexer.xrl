@@ -4,14 +4,16 @@ Int      = [0-9]+
 Float    = [0-9]+\.[0-9]+
 WS       = [\n\s\r\t]
 String   = "([^\\""]|\\.)*"
+CharList = '([^\\'']|\\.)*'
 
 
 Rules.
 
-{Int}    : {token, {num, [], int(TokenChars)}}.
-{Float}  : {token, {num, [], flt(TokenChars)}}.
-{String} : {token, {string, [], strValue(TokenChars)}}.
-{WS}     : skip_token.
+{Int}      : {token, {num, [], int(TokenChars)}}.
+{Float}    : {token, {num, [], flt(TokenChars)}}.
+{String}   : {token, {string, [], strValue(TokenChars)}}.
+{CharList} : {token, {char_list, [], strValue(TokenChars)}}.
+{WS}       : skip_token.
 
 
 Erlang code.

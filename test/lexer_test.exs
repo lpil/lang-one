@@ -20,4 +20,11 @@ defmodule OneLexerTest do
     ~S("\\") ~> [{:string, _, "\\"}]
     ~S("\"") ~> [{:string, _, ~S(")}]
   end
+
+  test "char lists" do
+    ~S"'Hi'" ~> [{:char_list, _, "Hi"}]
+    ~S"''"   ~> [{:char_list, _, ""}]
+    ~S"'\\'" ~> [{:char_list, _, "\\"}]
+    ~S"'\''" ~> [{:char_list, _, "'"}]
+  end
 end
