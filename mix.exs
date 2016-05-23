@@ -18,10 +18,8 @@ defmodule One.Mixfile do
 
   defp deps do
     [
-      # Code style linter
-      {:dogma, "~> 0.0", only: ~w(dev test)a},
       # Automatic test runner
-      {:mix_test_watch, github: "lpil/mix-test.watch", only: :dev},
+      {:mix_test_watch, github: "lpil/mix-test.watch", only: [:test, :dev]},
     ]
   end
 end

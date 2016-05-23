@@ -13,4 +13,11 @@ defmodule OneLexerTest do
     "29.1234" ~> [{:num, _, 29.1234}]
     "0001"    ~> [{:num, _, 1}]
   end
+
+  test "strings" do
+    ~S("Hi") ~> [{:string, _, "Hi"}]
+    ~S("")   ~> [{:string, _, ""}]
+    ~S("\\") ~> [{:string, _, ~S(\\)}]
+    ~S("\"") ~> [{:string, _, ~S(\")}]
+  end
 end
