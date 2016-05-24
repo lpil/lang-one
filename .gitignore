@@ -3,5 +3,5 @@
 /deps
 erl_crash.dump
 *.ez
-src/one_lexer.erl
-src/one_parser.erl
+src/one_yacc_lexer.erl
+src/one_leex_parser.erl
