@@ -21,3 +21,15 @@ char_list_test() ->
   ?assertTokens("''",       [{char_list, _, <<"">>}]),
   ?assertTokens("' \\\\ '", [{char_list, _, <<" \\ ">>}]),
   ?assertTokens("' \\' '",  [{char_list, _, <<" ' ">>}]).
+
+atom_test() ->
+  ?assertTokens(":hi",         [{atom, _, hi}]),
+  ?assertTokens(":123",        [{atom, _, '123'}]),
+  ?assertTokens(":WHAT_UP?",   [{atom, _, 'WHAT_UP?'}]),
+  ?assertTokens(":Hey-there!", [{atom, _, 'Hey-there!'}]).
+
+quoted_atom_test() ->
+  ?assertTokens(":\"hi\"",     [{atom, _, hi}]),
+  ?assertTokens(":\"\"",       [{atom, _, ''}]),
+  ?assertTokens(":\" \\\\ \"", [{atom, _, ' \\ '}]),
+  ?assertTokens(":\" \\\" \"",  [{atom, _, ' " '}]).
