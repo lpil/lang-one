@@ -1,4 +1,4 @@
--module(lang_one).
+-module(one).
 
 %% API exports
 -export([]).
